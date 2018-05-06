@@ -1,2 +1,2 @@
 # personal
-personal repository
+This is my personal repository with my tech stuff.
