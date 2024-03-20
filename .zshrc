@@ -126,6 +126,9 @@ unset ZSH_AUTOSUGGEST_USE_ASYNC
 # Forcing default-terminal for tmux in ASML hosts
 export TERM=xterm-256color
 
+# Setting up Github token
+export GITHUB_TOKEN=$(cat ~/.github-access-token)
+
 # Function to propagate CodeQuality envs
 function propagate_env_vars() {
   CURRENT_ENV=$(printenv)
