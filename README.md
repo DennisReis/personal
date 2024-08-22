@@ -1,10 +1,10 @@
 # personal
+
 This is my personal repository with my tech stuff.
 
 ## How to apply local setup
 
 ## Local setup
-
 
 ```bash
 # Install ZSH, TMUX and Vim
@@ -25,7 +25,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 # Apply all the changes
 source .zshrc
 # If Powelevel10 setup prompt didn't show up run
-p10k ocnfigure
+p10k configure
 # Configuring vim
 mkdir -p ~/.vim/colors
 cd ~/.vim/colors
@@ -39,4 +39,3 @@ ln -s -f .tmux/.tmux.conf
 cp .tmux/.tmux.conf.local .
 curl -fsSL https://raw.githubusercontent.com/DennisReis/personal/master/.tmux.conf.local -o $HOME/.tmux.conf.local
 ```
-

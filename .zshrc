@@ -10,7 +10,7 @@ ZSH_DISABLE_COMPFIX=true
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$PATH:/home/dereis/sonar-scanner-5.0.1.3006-linux/bin
+export PATH=$PATH:/home/dennis/.local/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -120,7 +120,7 @@ export now='--force --grace-period'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 #source /$USER/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /home/dereis/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 unset ZSH_AUTOSUGGEST_USE_ASYNC
 
 # Forcing default-terminal for tmux in ASML hosts
@@ -137,8 +137,3 @@ function propagate_env_vars() {
     echo $CURRENT_ENV | grep "${VAR_NAME}=" > /dev/null && echo "--env $VAR_NAME "
   done
 }
-source /home/dereis/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-### BEGIN ANSIBLE MANAGED BLOCK BEGIN ###
-export PATH=$PATH:/usr/local/go/bin
-### END ANSIBLE MANAGED BLOCK END ###
