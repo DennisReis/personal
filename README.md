@@ -25,7 +25,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 # Apply all the changes
 source .zshrc
 # If Powelevel10 setup prompt didn't show up run
-p10k ocnfigure
+p10k configure
 # Configuring vim
 mkdir -p ~/.vim/colors
 cd ~/.vim/colors
