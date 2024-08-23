@@ -1,0 +1,33 @@
+---
+
+- name: Check previous Go installation
+  ansible.builtin.stat:
+    path: /usr/local/go/VERSION
+  register: go
+
+- name: Remove previous Go installation, if exists
+  ansible.builtin.file:
+    path: /usr/local/go/VERSION
+    state: absent
+  when:
+    - go is defined
+    - go.stat.exists
+    - go_target_version not in lookup('file', /usr/local/go/VERSION)
+
+- name: Download Go version {{ go_target_version }}
+  ansible.builtin.get_url:
+    url: "{{ go_download_url }}/{{ go_package_name }}"
+    dest: /tmp/{{ go_package_name }}
+
+- name: Extract Go version {{ go_target_version }}
+  ansible.builtin.unarchive:
+    src: /tmp/{{ go_package_name }}
+    dest: /usr/local
+
+- name: Make Go executable system wide
+  ansible.builtin.blockinfile:
+    path: "{{ ansible_env.HOME }}/{{ go_local_shell[ansible_env.SHELL] }}"
+    append_newline: true
+    prepend_newline: true
+    marker: "#### {mark} ANSIBLE MANAGED BLOCK {mark} ####"
+    block: "export PATH=$PATH:/usr/local/go/bin"

@@ -1,0 +1,8 @@
+go_target_version: 1.22.1
+go_package_name: go{{ go_target_version }}.linux-amd64.tar.gz
+go_download_url: https://go.dev/dl
+go_local_shell:
+  /usr/bin/zsh: .zshrc
+  /usr/bin/bash: .bashrc
+  /bin/bash: /bashrc
+  /opt/distrod/alias/bin/bash: .bashrc

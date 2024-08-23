@@ -1,0 +1,15 @@
+---
+- name: Setup Developer workstation
+  hosts: localhost
+  become: true
+  gather_facts: true
+  pre_tasks:
+    - name: Set ansible_username
+      ansible.builtin.set_fact:
+        ansible_username: "{{ lookup('env', 'USER') | default(ansible_user_id, true) }}"
+  roles:
+    - go
+    - docker
+    - helm
+    - kubectl
+    - podman
