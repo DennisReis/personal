@@ -11,7 +11,7 @@ activate() {
 export DEBIAN_FRONTEND=noninteractive
 alias sudo="sudo -E"
 
-#Disallow root, unless in a container
+# Disallow root, unless in a container
 if [[ ! -f /run/.containerenv ]] && [[ $(whoami) == root ]]
 then
     echo You should not be root to run this
@@ -71,3 +71,8 @@ deactivate
 
 # Add commit id to a logfile so version number can be confirmed when accessed remotely
 git re-parse HEAD | sudo tee /etc/dev-toolkit-commit-id
+
+# Configuring git
+git config --global user.email "dmpreis@gmail.com"
+git config --global user.name "Dennis Reis"
+git config --global core.editor "vim"
